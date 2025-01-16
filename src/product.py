@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Product:
     """Класс для представления продуктов"""
     name: str
@@ -9,5 +12,24 @@ class Product:
         """Инициализация экземпляра класса продуктов. Задаем значения атрибутам экземпляра."""
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, price):
+        if price <= 0:
+            print('Цена не должна быть нулевая или отрицательная')
+        else:
+            self.__price = price
+
+    @classmethod
+    def new_product(cls, product: dict[str, Any]):
+        name = product['name']
+        description = product['description']
+        price = product['price']
+        quantity = product['quantity']
+        return cls(name, description, price, quantity)
