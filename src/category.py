@@ -23,10 +23,10 @@ class Category:
 
     @property
     def products_str(self):
-        product_str = ''
+        all_products_str = ''
         for product in self.__products:
-            product_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
-        return product_str
+            all_products_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        return all_products_str
 
     def add_product(self, product: Product):
         """Метод добавляет товары в приватный атрибут self.__products"""
