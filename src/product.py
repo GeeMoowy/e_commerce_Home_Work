@@ -17,10 +17,13 @@ class Product:
 
     @property
     def price(self):
+        """Геттер возвращает приватный атрибут объекта __price"""
         return self.__price
 
     @price.setter
     def price(self, price):
+        """Сеттер принимает новую цену и присваивает ее значение приватному атрибуту объекта __price,
+        или если цена некорректна, выводит сообщение о некорректном вводе"""
         if price <= 0:
             print('Цена не должна быть нулевая или отрицательная')
         else:
@@ -28,6 +31,7 @@ class Product:
 
     @classmethod
     def new_product(cls, product: dict[str, Any]):
+        """Метод принимает атрибут product в виде словаря и возвращает объект класса"""
         name = product['name']
         description = product['description']
         price = product['price']

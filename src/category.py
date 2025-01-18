@@ -19,10 +19,12 @@ class Category:
 
     @property
     def products(self):
+        """Геттер возвращает приватный атрибут __products"""
         return self.__products
 
     @property
     def products_str(self):
+        """Геттер возвращает все товары в приватном списке объекта в виде строки"""
         all_products_str = ''
         for product in self.__products:
             all_products_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'

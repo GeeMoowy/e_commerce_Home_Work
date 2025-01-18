@@ -22,7 +22,7 @@ def my_category():
         [
             Product('LG 200', 'Плазменные телевизоры', '24000', 5),
             Product('Samsung X5', 'Плазменные телевизоры', '25500', 3)
-            ]
+        ]
     )
 
 
@@ -43,4 +43,4 @@ def product_in_dict():
         "description": "256GB, Серый цвет, 200MP камера",
         "price": 180000.0,
         "quantity": 5
-      }
+    }
