@@ -25,10 +25,7 @@ class Category:
     @property
     def products_str(self):
         """Геттер возвращает все товары в приватном списке объекта в виде строки"""
-        all_products_str = ''
-        for product in self.__products:
-            all_products_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
-        return all_products_str
+        return '\n'.join(str(product) for product in self.__products)
 
     def __str__(self):
         total_number_of_products = 0
