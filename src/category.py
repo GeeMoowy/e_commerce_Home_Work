@@ -30,6 +30,13 @@ class Category:
             all_products_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return all_products_str
 
+    def __str__(self):
+        total_number_of_products = 0
+        for product in self.__products:
+            total_number_of_products += product.quantity
+        return f"{self.name}, количество продуктов: {total_number_of_products} шт."
+
+
     def add_product(self, product: Product):
         """Метод добавляет товары в приватный атрибут self.__products"""
         self.__products.append(product)

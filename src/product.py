@@ -29,6 +29,10 @@ class Product:
         else:
             self.__price = price
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+
     @classmethod
     def new_product(cls, product: dict[str, Any]):
         """Метод принимает атрибут product в виде словаря и возвращает объект класса"""
@@ -37,3 +41,8 @@ class Product:
         price = product['price']
         quantity = product['quantity']
         return cls(name, description, price, quantity)
+
+    def __add__(self, other):
+        total_price_self = self.__price * self.quantity
+        total_price_other = other.__price * other.quantity
+        return total_price_self + total_price_other
