@@ -22,4 +22,3 @@ class IterationProducts:
             return self.obj_category.products[self.prod_index]
         else:
             raise StopIteration
-
