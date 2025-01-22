@@ -33,7 +33,6 @@ class Category:
             total_number_of_products += product.quantity
         return f"{self.name}, количество продуктов: {total_number_of_products} шт."
 
-
     def add_product(self, product: Product):
         """Метод добавляет товары в приватный атрибут self.__products"""
         self.__products.append(product)
