@@ -42,7 +42,8 @@ class Product:
         return cls(name, description, price, quantity)
 
     def __add__(self, other):
-        if type(self) is type(other):
+        """Магический метод, который складывает два объекта по цене общего количества на складе"""
+        if type(self) is type(other):  # Проверка на то, что объекты одного типа (класса)
             total_price_self = self.__price * self.quantity
             total_price_other = other.__price * other.quantity
             return total_price_self + total_price_other

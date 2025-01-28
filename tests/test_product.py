@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -29,3 +31,8 @@ def test_wrong_price(capsys, product, negative_price):
 
 def test_add_(product, product_1):
     assert product + product_1 == 447803
+
+
+def test_add_type_error(smartphone1, grass_test):
+    with pytest.raises(TypeError):
+        smartphone1 + grass_test
