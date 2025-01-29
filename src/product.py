@@ -1,7 +1,8 @@
 from typing import Any
+from src.base_product import BaseProduct
 
 
-class Product:
+class Product(BaseProduct):
     """Класс для представления продуктов"""
     name: str
     description: str
