@@ -35,5 +35,7 @@ class Category:
 
     def add_product(self, product: Product):
         """Метод добавляет товары в приватный атрибут self.__products"""
+        if not isinstance(product, Product):
+            raise TypeError
         self.__products.append(product)
         Category.product_count += 1
