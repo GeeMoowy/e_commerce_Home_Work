@@ -26,7 +26,7 @@ def test_correct_price(product, correct_price):
 def test_wrong_price(capsys, product, negative_price):
     product.price = negative_price
     message = capsys.readouterr()
-    assert message.out.strip() == 'Цена не должна быть нулевая или отрицательная'
+    assert message.out.strip().split('\n')[-1] == ('Цена не должна быть нулевая или отрицательная')
 
 
 def test_add_(product, product_1):
