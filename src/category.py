@@ -1,3 +1,5 @@
+from functools import total_ordering
+
 from src.product import Product
 
 
@@ -39,3 +41,13 @@ class Category:
             raise TypeError
         self.__products.append(product)
         Category.product_count += 1
+
+    def middle_price(self):
+        total_amount = 0
+        for product in self.__products:
+            total_amount += product.price * product.quantity
+        if len(self.__products) == 0:
+            return 0
+        else:
+            result = total_amount / len(self.__products)
+            return result
