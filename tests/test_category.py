@@ -30,3 +30,11 @@ def test_add_product_type_error(my_category):
     wrong_product = 'Не продукт'
     with pytest.raises(TypeError):
         my_category.add_product(wrong_product)
+
+
+def test_middle_price(my_category):
+    assert my_category.middle_price() == 98250.0
+
+
+def test_middle_price_product_zero(my_category_product_empty):
+    assert my_category_product_empty.middle_price() == 0

@@ -39,3 +39,14 @@ class Category:
             raise TypeError
         self.__products.append(product)
         Category.product_count += 1
+
+    def middle_price(self):
+        total_amount = 0
+        for product in self.__products:
+            total_amount += product.price * product.quantity
+        try:
+            result = total_amount / len(self.__products)
+        except ZeroDivisionError:
+            return 0
+        else:
+            return result

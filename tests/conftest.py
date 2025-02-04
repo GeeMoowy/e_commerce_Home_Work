@@ -27,14 +27,33 @@ def product_1():
 
 
 @pytest.fixture
+def product_zero_quantity():
+    return Product(
+        'Samsung K20',
+        'Телевизор с диагональю "60',
+        83000.50,
+        0
+    )
+
+
+@pytest.fixture
 def my_category():
     return Category(
         'Телевизоры',
         'Телевизоры с большой диагональю',
         [
-            Product('LG 200', 'Плазменные телевизоры', '24000', 5),
-            Product('Samsung X5', 'Плазменные телевизоры', '25500', 3)
+            Product('LG 200', 'Плазменные телевизоры', 24000, 5),
+            Product('Samsung X5', 'Плазменные телевизоры', 25500, 3)
         ]
+    )
+
+
+@pytest.fixture
+def my_category_product_empty():
+    return Category(
+        'Телевизоры',
+        'Телевизоры с большой диагональю',
+        []
     )
 
 
