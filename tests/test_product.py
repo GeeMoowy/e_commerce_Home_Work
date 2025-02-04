@@ -1,5 +1,4 @@
 import pytest
-
 from src.product import Product
 
 
@@ -39,8 +38,8 @@ def test_add_type_error(smartphone1, grass_test):
 
 
 def test_init_zero_quantity():
-    with pytest.raises(ValueError) as e:
-        prod = Product(
+    with pytest.raises(ValueError):
+        Product(
             'Samsung K20',
             'Телевизор с диагональю "60',
             83000.50,

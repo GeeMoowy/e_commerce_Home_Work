@@ -1,5 +1,3 @@
-from functools import total_ordering
-
 from src.product import Product
 
 
