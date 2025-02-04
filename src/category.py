@@ -46,8 +46,9 @@ class Category:
         total_amount = 0
         for product in self.__products:
             total_amount += product.price * product.quantity
-        if len(self.__products) == 0:
+        try:
+            result = total_amount / len(self.__products)
+        except ZeroDivisionError:
             return 0
         else:
-            result = total_amount / len(self.__products)
             return result
